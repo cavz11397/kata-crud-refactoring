@@ -1,18 +1,20 @@
 package co.com.sofka.crud.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name= "ListOfTodos")
+@Table(name= "list_of_todos")
 public class ListTodo {
 
     @Id
     @GeneratedValue
     private Long id;
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL,  orphanRemoval = true)
+    private Set<Todo> todos;
 
     public Long getId() {
         return id;
@@ -28,5 +30,13 @@ public class ListTodo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Todo> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(Set<Todo> todos) {
+        this.todos = todos;
     }
 }

@@ -12,6 +12,15 @@ public class Todo {
     private Long id;
     private String name;
     private boolean completed;
+    private Long IdList;
+
+    public Long getIdList() {
+        return IdList;
+    }
+
+    public void setIdList(Long idList) {
+        IdList = idList;
+    }
 
     public Long getId() {
         return id;

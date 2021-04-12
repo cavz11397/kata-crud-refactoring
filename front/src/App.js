@@ -1,13 +1,15 @@
 import React from 'react';
 import { StoreProvider } from './components/Store';
-import { Form } from './components/FormList';
-import { List } from './components/ListTodo';
+import { Form as FormTodo } from './components/todo/FormTodo';
+import { Form as FormList } from './components/list/FormList';
+import { List } from './components/todo/ListTodo';
 
 function App() {
   return (
     <StoreProvider>
       <h3>To-Do List</h3>
-      <Form />
+      <FormList />
+      <FormTodo/>
       <List />
     </StoreProvider>
   )
